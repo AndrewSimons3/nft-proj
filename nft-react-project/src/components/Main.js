@@ -1,5 +1,9 @@
 import React from 'react';
-import './Main.css'
+import './Main.css';
+import instagramLogo from '../assets/instagram.png';
+import twitterLogo from '../assets/twitter.png';
+import moreIcon from '../assets/more.png';
+import { useState, useEffect } from 'react';
 
 const Main = ({ selectedPunk, punkListData }) => {
   const [activepunk, setActivePunk] = useState(punkListData[0])
@@ -8,43 +12,46 @@ const Main = ({ selectedPunk, punkListData }) => {
     setActivePunk(punkListData[selectedPunk])
   }, [punkListData, selectedPunk])
   return (
-    <d className='main'>
+    <div className='main'>
       <div className='mainContent'>
+        
         <div className='punkHighlight'>
           <div className='punkContainer'>
             <img className='selectedPunk'
-              src={activePunk.image_original_url}
+              src=''
               alt=''
             />
           </div>
         </div>
-        <div className="punkDetails" style={{ color: '#fff' }}
-          <div className='title'>
-          {activePunk.name}
+
+        <div className='punkDetails' style={{ color: '#fff' }}>
+          <div className='title'></div>
+          <span className='itemNumber'></span>
         </div>
-        <span className='itemNumber'>*{activePunk.token_id}</span>
-      </div>
+      
       <div className='owner'>
         <div className='ownerImageContainer'>
-          <img src={activePunk.owner.profile_img)url} alt=''/>
+          <img src='' alt=''/>
         </div>
-        <div classNmae="ownerDetails">
-          <div className="ownerNameAndHandle">
-            <div>{active.Punk.}</div>
-            <div className="ownerHandle">@bigsim</div>
+        <div className='ownerDetails'>
+          <div className='ownerNameAndHandle'>
+            <div>{}</div>
+            <div className='ownerHandle'>@bigsim</div>
           </div>
-          <div className="ownerLink">
-            <img src={''}
+          <div className='ownerLink'>
+            <img src={instagramLogo} />
           </div>
           <div className="owner">
-            <img src={''}
+            <img src={twitterLogo} />
           </div>
           <div className="ownerLink">
-            <img src={''}
+            <img src={moreIcon} />
           </div>
         </div>
       </div>
+
     </div>
+  </div>
   )
 }
 
